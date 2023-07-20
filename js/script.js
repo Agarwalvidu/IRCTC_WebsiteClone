@@ -112,3 +112,26 @@ dropdownContent.addEventListener("mouseenter", function () {
 dropdownContent.addEventListener("mouseleave", function () {
   dropdownContent.style.display = "none";
 });
+
+var dropdown1Content = document.getElementById("dropdown1Content");
+var dropdown1 = document.querySelector(".dropdown1");
+var timer;
+
+dropdown1.addEventListener("mouseenter", function () {
+  clearTimeout(timer);
+  dropdown1Content.style.display = "block";
+});
+
+dropdown1.addEventListener("mouseleave", function () {
+  timer = setTimeout(function () {
+    dropdown1Content.style.display = "none";
+  }, 100); // Change the duration (in milliseconds) as per your requirement
+});
+
+dropdown1Content.addEventListener("mouseenter", function () {
+  clearTimeout(timer);
+});
+
+dropdown1Content.addEventListener("mouseleave", function () {
+  dropdown1Content.style.display = "none";
+});
